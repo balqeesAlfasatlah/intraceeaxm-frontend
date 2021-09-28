@@ -7,6 +7,10 @@ import {
   Route
 } from "react-router-dom";
 import { withAuth0 } from '@auth0/auth0-react';
+import { Container } from 'react-bootstrap';
+import Home from './components/Home'
+import Favourite from './components/Favourite'
+import LoginButton from './components/LoginButton';
 
 
 class App extends React.Component {
@@ -20,10 +24,11 @@ class App extends React.Component {
             <Header />
             <Switch>
               <Route exact path="/">
-                {/* TODO: if the user is logged in, render the `Home` component, if they are not, render the `Login` component */}
+             {isAuthenticated ? <Container><Home/></Container> : <LoginButton/>} 
               </Route>
-              <Route exact path="/favFruit">
-                {/* TODO: if the user is logged in, render the `FavFruit` component, if they are not, render the `Login` component */}
+              <Route exact path="/Favourite">
+              {isAuthenticated ? <Container><Favourite/></Container> : <LoginButton/>} 
+               
               </Route>
             </Switch>
             <Footer />
