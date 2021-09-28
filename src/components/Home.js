@@ -18,7 +18,7 @@ class Home extends React.Component {
   }
 
   componentDidMount=()=>{
-    let url2 ='http://localhost:3008/getFruit'
+    let url2 =`${process.env.REACT_APP_SERVER}/getFruit`
     axios.get(url2).then(item=>{
       this.setState({
         fruitData :item.data,
@@ -35,7 +35,7 @@ class Home extends React.Component {
       price : data.price ,
 
     }
-    axios.post('http://localhost:3008/addFruit',newData);
+    axios.post(`${process.env.REACT_APP_SERVER}/addFruit`,newData);
   }
   
 
