@@ -10,7 +10,7 @@ export class ModelForm extends Component {
                         <Modal.Title>Modal heading</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Form onClick={this.props.update}>
+                        <Form onSubmit={this.props.update}>
                             <Form.Control type="text" placeholder="Normal text" name= "image"  defaultValue={this.props.image} />
                             <Form.Control type="text" placeholder="Normal text" name= "name"   defaultValue={this.props.name} />
                             <Form.Control type="text" placeholder="Normal text" name= "price"  defaultValue={this.props.price} />

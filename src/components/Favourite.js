@@ -59,25 +59,23 @@ export class Favourite extends Component {
         })
     }
 
-    update = (e) => {
+    update=(e)=>{
         e.preventDefault();
-        let id = this.state.favData[this.state.index]._id;
+        let id = this.state.favData[this.state.index]._id
+
         let data ={
-            image: e.target.image.value ,
-            name: e.target.name.value ,
-            price: e.target.price.value ,
-        
+            image : e.target.image.value,
+            name : e.target.name.value,
+            price : e.target.price.value,
         }
-        
 
-        axios.put(`${process.env.REACT_APP_SERVER}/updateFruit/${id}`,data).then(element => {
+        axios.put(`${process.env.REACT_APP_SERVER}/updateFruit/${id}`,data).then(item => {
             this.setState({
-                favData: element.data,
-
+                favData: item.data,
+                
             })
         })
     }
-
 
 
 
